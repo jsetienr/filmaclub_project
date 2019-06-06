@@ -71,6 +71,7 @@
         </div>
         <div id="divBotonesEnviar">
             <input type="submit" id="submitRegistro" name="submitRegistro" value="Registrar" />
+            <input type="button" id="checkRegistro" name="checkRegistro" value="Check"/>
             <!-- <input type="reset" id="resetRegistro" name="resetRegistro" value="Vaciar Campos" /> -->
             <input type="button" id="cancelRegistro" name="cancelRegistro" value="Cancelar" />
         </div>
@@ -78,5 +79,6 @@
 </div>
 
 <script src="./js/login_script.js"></script>
+
 <!--Fin Registro-->
 <!--Fin FORMULARIOS-->
