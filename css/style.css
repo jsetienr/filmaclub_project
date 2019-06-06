@@ -1,0 +1,144 @@
+/* 
+    Created on : 18-mar-2019
+    Author     : Javier Setién Rivas
+*/
+
+/* SECCION HEADER */
+
+/* Barra Top */
+
+#top {
+    background-color: #1e90ff;
+    color: white;
+    padding: .5em 0;
+}
+
+/* Barra superior */
+
+#barra {
+    padding: 1em 0;
+}
+
+.navbar {
+    margin-bottom: 0px;
+    box-shadow: 2px 2px 20px #eaeaea;
+}
+
+.navbar-toggle span {
+    background-color: gray;
+}
+
+#titulo-pagina {
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #45AED6;
+}
+
+#titulo-pagina img, #titulo-pagina span {
+    float: left;
+}
+
+#logo-pagina {
+    width: 50px;
+    height: 45px;
+}
+
+/* Menu principal */
+
+#myNavbar ul li a {
+    text-decoration: none;
+    color: #2E2E2E;
+    font-size: 1em;
+}
+
+#myNavbar ul li a:hover {
+    color: white;
+    background-color: #45AED6;
+    border-radius: 10%;
+}
+
+.affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+    background-color: white;
+}
+
+.affix+.container-fluid {
+    padding-top: 70px;
+}
+
+/*Slider*/
+
+.slider_title {
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+/* SECCION Contenido Reciente */
+
+#contenido {
+    padding: 0px;
+}
+
+.contenido-reciente {
+    background-color: #ffd2d3;
+    padding: 1em;
+}
+
+/* SECCION About Us */
+
+#equipo {
+    padding: 0px;
+}
+
+.team-info {
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+    border-bottom: 1px solid rgb(233, 8, 8);
+}
+
+.miembro-equipo {
+    background-color: #d2e9ff;
+    padding: 1em;
+}
+
+#info_equipo {
+    margin-top: 3%;
+}
+
+/* SECCION PIE  */
+
+#footer {
+    background-color: #000026;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    margin-top: 5%;
+}
+
+.copyright {
+    color: white;
+}
+
+.iconos-social {
+    float: right;
+    margin: 0;
+}
+
+.iconos-social li {
+    float: left;
+}
+
+.iconos-social li a {
+    font-size: 1.5em;
+    margin-left: 0.2em;
+}
+
+.iconos-social li a:hover {
+    color: white;
+}

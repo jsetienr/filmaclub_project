@@ -1,0 +1,186 @@
+/* 
+    Created on : 20-mar-2019
+    Author     : Javier Setién Rivas
+*/
+
+/*CUERPO*/
+
+body {
+    background-color: white;
+}
+
+/*div {
+    margin: 1.5% 0;
+}*/
+
+/*
+.mensajes-sistema{
+    border: 1px solid #00B7FA;
+    background: #70D9FF;
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+    color: #000;
+}*/
+
+input[type=text], input[type=password], select, textarea {
+    width: 100%;
+    padding: 3% 5%;
+    margin: 1% 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type=submit], input[type=reset], input[type=button], input[type=file] {
+    width: 100%;
+    background-color: #c1e1ec;
+    color: black;
+    padding: 3% 5%;
+    margin: 1% 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type=submit]:hover {
+    background-color: #c5da86;
+}
+
+input[type=reset]:hover {
+    background-color: #e6add8;
+}
+
+input[type=button]:hover {
+    background-color: #ff6767;
+}
+
+#btnRegistrar {
+    width: 100%;
+    background-color: #ffff94;
+    color: black;
+    padding: 3% 3%;
+    margin: 2% 0;
+    border-radius: 10px;
+    border: 2px solid #94cbff;
+    cursor: pointer;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#btnRegistrar:hover {
+    background-color: #c7ffff;
+}
+
+#enlaceNuevoRegistro {
+    cursor: pointer;
+}
+
+#form_login, #form_registro {
+    border-radius: 10px;
+    background-color: #e8f4f8;
+    padding: 2%;
+    margin: 3% 30%;
+    border: 2px solid #d4ebf2;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    border: 3px solid #555;
+}
+
+input[type=date] {
+    width: 100%;
+    padding: 3% 5%;
+    margin: 1% 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    margin-left: 50px;
+}
+
+.radio-group {
+    border: solid 3px #332f35;
+    display: inline-block;
+    margin: 5% 25%;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 12px 20px;
+}
+
+/* CREACION DE ELEMENTOS */
+
+.creacionElemento {
+    margin-top: 0%;
+    padding: 0.5%;
+    background-color: #bcf5bc;
+    border: solid #79eb79;
+    border-radius: 10px;
+}
+
+.contenedor {
+    margin-top: 7%;
+}
+
+.formulariosCreacion {
+    border-radius: 10px;
+    background-color: #e8f4f8;
+    padding: 2%;
+    margin: 10% 17%;
+    border: 2px solid #d4ebf2;
+}
+
+input[type="file"] {
+    display: inline-block;
+    opacity: 0;
+    position: absolute;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 67px;
+    width: 50%;
+    z-index: 99;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.custom-file-upload {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: url(http://www.a-yachtcharter.com/search-fleet/webaccess/assets/img/uploadIcon.png) #fff center center no-repeat;
+    width: 95%;
+    border: 1px dashed #ff5b57 !important;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.labelError {
+    margin-left: 5%;
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+.inputIncorrecto {
+    font-style: italic;
+    color: #b30000;
+}
+
+.inputCorrecto {
+    font-style: italic;
+    color: #228b22;
+}
