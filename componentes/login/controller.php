@@ -1,5 +1,5 @@
 <?php
-include 'componentes/login/model.php';
+require_once 'componentes/login/model.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
@@ -8,16 +8,39 @@ if (isset($_GET['logout'])) {
     session_unset();
 }
 
-if (isset($_SESSION['usuario'])) {
+if (isset($_POST['submitAcceso'])) {
+    $alias = $_POST['inputAlias'];
+    $passwd = $_POST['inputPassword'];
 
-    $estado = '';
-
-    if (isset($_POST['submitRegistro'])) {
-        $newRegistro = modelLogin::newUsuario();
-        $estado = "Usuario registrado.";
+    if (modelLogin::checkAlias($alias, $passwd)) {
+        $estado = "alias: $alias AUTORIZADO.";
+    } else {
+        $estado = "alias: $alias incorrectos.";
+        //header("Location: index.php?option=login");                
     }
-} else {
-    // header("Location: http://localhost/ProyectoFinDeCiclo_JavierSetienRivas/web/www/index.php?option=login");
 }
 
-include 'componentes/login/view.php';
+// if (isset($_SESSION['usuario'])) {
+
+
+if (isset($_POST['submitRegistro'])) {
+
+    $alias            = $_POST['inputNuevoAlias'];
+    $contrasenya      = $_POST['inputNuevoPassword'];
+    $nombre           = $_POST['inputNombre'];
+    $apellidos        = $_POST['inputApellidos'];
+    $dni              = $_POST['inputDNI'];
+    $fecha_nacimiento = $_POST['inputFecha'];
+    $mail             = $_POST['inputMail'];
+    $direccion        = $_POST['inputDireccion'];
+    $telefono         = $_POST['inputTelefono'];
+    $tipo_usuario     = 2;
+
+    modelLogin::newUsuario($alias, $contrasenya, $nombre, $apellidos, $dni, $fecha_nacimiento, $mail, $direccion, $telefono, $tipo_usuario);
+    $estado = "Usuario registrado";
+}
+// } else {
+// header("Location: header("Location: index.php?option=login");
+// }
+
+require_once 'componentes/login/view.php';

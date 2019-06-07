@@ -17,6 +17,7 @@ session_start();
 // Obtiene el nombre del componente solicitado si hay ($_GET['option']) o uno por defecto
 if(isset($_GET['option'])){
     $componente = $_GET['option'];
-} else {
+} 
+else {
     $componente = 'home';
 }

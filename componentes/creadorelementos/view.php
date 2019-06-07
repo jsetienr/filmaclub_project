@@ -10,7 +10,7 @@
     </div>
     <div class=" container">
         <div id="creacionPeliculas" class="contenedor">
-            <form class="formulariosCreacion" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+            <form class="formulariosCreacion" action="index.php?option=login" method="POST">
                 <h1>Creación de Película:</h1>
                 <div id="divNombrePelicula">
                     <label id="labelNombrePelicula">Nombre de la Película: </label>
@@ -59,7 +59,7 @@
             </form>
         </div>
         <div id="creacionActor" class="contenedor" style="display: none;">
-            <form class="formulariosCreacion" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+            <form class="formulariosCreacion" action="index.php?option=login" method="POST">
                 <h1>Creación de Actor:</h1>
                 <div id="divNombreActor">
                     <label id="labelNombreActor">Nombre del Actor: </label>
@@ -85,7 +85,7 @@
             </form>
         </div>
         <div id="creacionReviews" class="contenedor">
-            <form class="formulariosCreacion" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+            <form class="formulariosCreacion" action="index.php?option=login" method="POST">
                 <h1>Creación de Review:</h1>
                 <div id="divAutorReview">
                     <label id="labelAutorReview">Autor: </label><label id="errlabelAutorReview"></label>
@@ -106,7 +106,7 @@
             </form>
         </div>
         <div id="creacionHistorias" class="contenedor">
-            <form class="formulariosCreacion" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+            <form class="formulariosCreacion" action="index.php?option=login" method="POST">
                 <h1>Creación de Curiosidad:</h1>
                 <div id="divAutorCuriosidad">
                     <label id="labelAutorCuriosidad">Autor: </label><label id="errlabelAutorCuriosidad"></label>
@@ -123,7 +123,7 @@
             </form>
         </div>
         <div id="creacionNoticias" class="contenedor">
-            <form class="formulariosCreacion" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+            <form class="formulariosCreacion" action="index.php?option=login" method="POST">
                 <h1>Creación de Noticia:</h1>
                 <div id="divTituloNoticia">
                     <label id="labelTituloNoticia">Titular de la Noticia: </label>
@@ -136,7 +136,7 @@
             </form>
         </div>
         <div id="creacionProductos" class="contenedor">
-            <form class="formulariosCreacion" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+            <form class="formulariosCreacion" action="index.php?option=login" method="POST">
                 <h1>Creación de Producto:</h1>
                 <div id="divDescripcionProducto">
                     <label id="labelDescripcionProducto">Descripción: </label>
