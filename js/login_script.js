@@ -11,6 +11,7 @@ function init() {
   $("#cancelRegistro").on("click", cancelRegistro);
   // checkInputsVacios();
   $("#checkRegistro").on("click", checkData);
+  // $("#cierrasesionbtn").on("click", awaitURL);
 }
 
 function nuevoRegistro() {
@@ -35,6 +36,19 @@ function checkData() {
   console.log("Direccion: " + $('#inputDireccion').val());
   console.log("Telefono: " + $('#inputTelefono').val());
 }
+
+// function awaitURL(){
+//   console.log("esperando a cambiar la url...");
+//   setInterval(changeURL(),2000);
+// }
+
+// function changeURL(){
+//   console.log("cambiando la url...");
+//   var pathname = window.location.pathname;
+//   console.log(pathname);
+//   var url="index.php?option=home";
+//   window.location = url;
+// }
 
 /* CONTROLAR INSERCION CORRECTA DNI */
 /*inputDNI ---errlabelDNI*/

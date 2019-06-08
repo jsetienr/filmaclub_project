@@ -23,8 +23,19 @@ body {
     color: #000;
 }*/
 
-input[type=text], input[type=password], select, textarea {
+input[type=text], input[type=password], select {
     width: 100%;
+    padding: 3% 5%;
+    margin: 1% 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 100%;
+    /* height: 100%; */
     padding: 3% 5%;
     margin: 1% 0;
     display: inline-block;
@@ -129,7 +140,7 @@ input[type="radio"] {
 }
 
 .contenedor {
-    margin-top: 7%;
+    margin-top: 3%;
 }
 
 .formulariosCreacion {
@@ -138,6 +149,22 @@ input[type="radio"] {
     padding: 2%;
     margin: 10% 17%;
     border: 2px solid #d4ebf2;
+}
+
+.formulariosCreacionVarios {
+    border-radius: 10px;
+    background-color: #e8f4f8;
+    padding: 2%;
+    margin: 3% 17%;
+    border: 2px solid #d4ebf2;
+}
+
+.formulariosCreacionPeliculas {
+    border-radius: 10px;
+    background-color: #e8f4f8;
+    padding: 2%;
+    border: 2px solid #d4ebf2;
+    margin: 10% 17% 0% 17%
 }
 
 input[type="file"] {
@@ -183,4 +210,40 @@ input[type="file"] {
 .inputCorrecto {
     font-style: italic;
     color: #228b22;
+}
+
+.exitoLogin {
+    margin-top: 2%;
+}
+
+.emoji {
+    font-size: 3em;
+}
+
+#labelValoracionMal {
+    color: #8b0000;
+    font-weight: bold;
+    font-size: 1.07em;
+}
+
+#labelValoracionRegular {
+    color: #e63e00;
+    font-weight: bold;
+    font-size: 1.07em;
+}
+
+#labelValoracionBien {
+    color: #0000b3;
+    font-weight: bold;
+    font-size: 1.07em;
+}
+
+#labelValoracionMuyBien {
+    color: #006400;
+    font-weight: bold;
+    font-size: 1.07em;
+}
+
+.labelIcon {
+    font-size: 1.5em;
 }

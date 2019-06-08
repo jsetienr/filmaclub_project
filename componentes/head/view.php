@@ -42,20 +42,27 @@
 		<!-- Menu -->
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="active dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="index.php?option=reviews">Reviews <i class="fas fa-star"></i><span class="caret"></span></a>
+				<li class="active dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Reviews <i class="fas fa-star"></i><span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="index.php?option=reviews">Listado de Reviews <i class="fab fa-readme"></i></a></li>
 						<li><a href="index.php?option=creacionreviews">Creación de Reviews <i class="fas fa-pencil-alt"></i></a></li>
 					</ul>
 				</li>
-				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="index.php?option=historias">Historias del Cine <i class="fas fa-archive"></i><span class="caret"></span></a>
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Historias del Cine <i class="fas fa-archive"></i><span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="index.php?option=historias">Listado de Historias <i class="fab fa-readme"></i></a></li>
 						<li><a href="index.php?option=creacionhistorias">Aporta una Historia <i class="fas fa-pencil-alt"></i></a></li>
 					</ul>
 				</li>
 				<li><a href="index.php?option=noticias">Noticias <i class="fas fa-newspaper-o"></i></a></li>
-				<li><a href="index.php?option=creadorelementos">Creación <i class="fas fa-plus-square"></i></a></li>
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="index.php?option=creadorelementos">Creación <i class="fas fa-plus-square"><span class="caret"></span></i></a>
+					<ul class="dropdown-menu">
+						<li><a href="index.php?option=creacionpeliculas">Creador de Peliculas <i class="fas fa-film"></i></a></li>
+						<li><a href="index.php?option=creacionactores">Creador de Actores <i class="fas fa-theater-masks"></i></a></li>
+						<li><a href="index.php?option=creacionnoticias">Creador de Nocicias <i class="far fa-newspaper"></i></a></li>
+						<li><a href="index.php?option=creacionproductos">Creador de Productos <i class="fas fa-gifts"></i></a></li>
+					</ul>
+				</li>
 				<li><a href="index.php?option=tienda">FilmaShop <i class="fas fa-shopping-cart"></i></a></li>
 				<li><a href="index.php#equipo">About Us <i class="fas fa-users"></i></a></li>
 			</ul>
@@ -72,8 +79,17 @@
 				</li> -->
 
 				<!-- Boton Login -->
-				<li><a href="index.php?option=login"><span class="glyphicon glyphicon-log-in">
-							Login</span> </a></li>
+				<?php
+				if (isset($_SESSION["usuario"]) && !empty($_SESSION["usuario"])
+				 && ($_SESSION["usuario"] !== "") && ($_SESSION["usuario"] !== NULL)) {
+					echo "<a href='index.php?option=usuario'>".$_SESSION["usuario"]."</a>";
+					echo "<li><a href='index.php?option=login'><span class='glyphicon glyphicon-log-in'>
+					Login</span></a></li>";
+				} else {
+					echo "<li><a href='index.php?option=login'><span class='glyphicon glyphicon-log-in'>
+					Login</span></a></li>";
+				}
+				?>
 			</ul>
 		</div>
 	</div>

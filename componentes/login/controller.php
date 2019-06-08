@@ -1,23 +1,22 @@
 <?php
 require_once 'componentes/login/model.php';
 
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-
+// error_reporting(E_ALL);
+// ini_set('display_errors', '1');
 if (isset($_GET['logout'])) {
     session_unset();
 }
 
 if (isset($_POST['submitAcceso'])) {
+
     $alias = $_POST['inputAlias'];
     $passwd = $_POST['inputPassword'];
 
-    if (modelLogin::checkAlias($alias, $passwd)) {
-        $estado = "alias: $alias AUTORIZADO.";
-    } else {
-        $estado = "alias: $alias incorrectos.";
-        //header("Location: index.php?option=login");                
-    }
+    modelLogin::checkAlias($alias, $passwd);
+    // header("Refresh:0");
+    // header("Refresh:0; url=page2.php");
+    // header("Location: index.php?option=home");                
+
 }
 
 // if (isset($_SESSION['usuario'])) {
