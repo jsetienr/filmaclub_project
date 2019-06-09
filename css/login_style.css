@@ -159,7 +159,7 @@ input[type="radio"] {
     border: 2px solid #d4ebf2;
 }
 
-.formulariosCreacionPeliculas {
+.formulariosCreacionMultiple {
     border-radius: 10px;
     background-color: #e8f4f8;
     padding: 2%;
@@ -246,4 +246,8 @@ input[type="file"] {
 
 .labelIcon {
     font-size: 1.5em;
+}
+
+.avisoNoLogin{
+    margin-top: 2%;
 }

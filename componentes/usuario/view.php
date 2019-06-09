@@ -26,8 +26,18 @@
                 } elseif ($key == "telefono") {
                     $telefonoUsuario =  $value;
                 }
+                $numHistorias = modelUsuario::countHistorias($_SESSION["usuario"]);
+                foreach ($numHistorias as  $numero) {
+                    $contHistorias = $numero;
+                }
+                $numReviews = modelUsuario::countReviews($_SESSION["usuario"]);
+                foreach ($numReviews as  $numero) {
+                    $contReviews = $numero;
+                }
+                $showHistorias = modelUsuario::viewHistorias($_SESSION["usuario"]);
+                $showReviews = modelUsuario::viewReviews($_SESSION["usuario"]);
             }
-            echo "<h1>HOLA: $nombreUsuario</h1>";
+            echo "<h1>Hola, $nombreUsuario</h1>";
             echo    "<form method='post'>
                         <button class='btn btn-outline-secondary' id='cierrasesionbtn' name='cierrasesionbtn'>Cerrar Sesión</button>
                     </form>";
@@ -62,12 +72,24 @@
             echo "    <div class='col-md-6'>";
             echo "        <h3>Reviews del Usuario:</h3>";
             echo "        <label class='labelDataUser'>Totales: </label>";
-            echo "        <p class='dataUser'>0</p>";
+            echo "        <p class='dataUser'>$contReviews</p>";
+            if ($contReviews > 0) {
+                echo "        <label class='labelDataUser'>Peliculas: </label>";
+                foreach ($showReviews as $value) {
+                    echo "        <p class='dataUser'>".utf8_encode($value['nombre'])." [Nota: ".$value['puntuacion']."]</p>";
+                }
+            }
             echo "    </div>";
             echo "    <div class='col-md-6'>";
             echo "        <h3>Historias del cine del Usuario:</h3>";
             echo "        <label class='labelDataUser'>Totales: </label>";
-            echo "        <p class='dataUser'>0</p>";
+            echo "        <p class='dataUser'>$contHistorias</p>";
+            if ($contHistorias > 0) {
+                echo "        <label class='labelDataUser'>Peliculas: </label>";
+                foreach ($showHistorias as $value) {
+                    echo "        <p class='dataUser'>".utf8_encode($value['nombre'])."</p>";
+                }
+            }
             echo "    </div>";
             echo "  </div>";
             echo " </div>";

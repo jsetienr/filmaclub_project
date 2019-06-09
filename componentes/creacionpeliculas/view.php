@@ -2,7 +2,7 @@
 <div>
     <div class=" container">
         <div id="creacionPeliculas" class="contenedor">
-            <form class="formulariosCreacionPeliculas" action="index.php?option=creacionpeliculas" method="POST">
+            <form class="formulariosCreacionMultiple" action="index.php?option=creacionpeliculas" method="POST">
                 <h1>Creación de Película:</h1>
                 <div id="divNombrePelicula">
                     <label id="labelNombrePelicula">Nombre de la Película: </label>
@@ -25,7 +25,7 @@
 
                         foreach ($results_array as $genero) {
                             echo "<option value='" . $genero[id_genero] . "'>"
-                                . $genero[genero_pelicula] . "</option>";
+                                . utf8_encode($genero[genero_pelicula]) . "</option>";
                         }
                         ?>
                     </select>
@@ -36,7 +36,7 @@
                 </div>
                 <div id="divDescripcionPelicula">
                     <label id="labelDescripcionPelicula">Descripción: </label>
-                    <textarea id="inputDescripcionPelicula" name="inputDescripcionPelicula" placeholder="Introduce Descripción"></textarea>
+                    <textarea id="inputDescripcionPelicula" name="inputDescripcionPelicula" rows="6" placeholder="Introduce Descripción"></textarea>
                 </div>
                 <div id="divBotonesAcceso">
                     <input type="submit" id="submitPelicula" name="submitPelicula" value="Crear" />
@@ -55,14 +55,15 @@
                         $results_array = modelCreadorPeliculas::viewPeliculas();
                         foreach ($results_array as $pelicula) {
                             echo "<option value='$pelicula[clave_pelicula]'>"
-                                . $pelicula[nombre] . "</option>";
+                                . utf8_encode($pelicula[nombre]) . "</option>";
                         }
                         ?>
                     </select>
                 </div>
                 <div id="divPosterPelicula">
                     <label id="labelPosterPelicula">Poster: </label><br />
-                    <input type="file" id="inputPosterPelicula" multiple class="form-control">
+                    <!-- <input type="file" id="inputPosterPelicula" class="form-control"> -->
+                    <input name="archivo" type="file" class="form-control" />
                     <label for="file-upload" class="custom-file-upload"></label>
                 </div>
                 <div id="divBotonesAcceso">

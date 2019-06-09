@@ -1,51 +1,8 @@
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<div class="container">
-    <div class="usuario">
-        <h1>HOLA: </h1>
-        <form method='post'>
-            <button class='btn btn-outline-secondary' id='cierrasesionbtn' name='cierrasesionbtn'>Cerrar Sesión</button>
-        </form>
-        <div class='container-fluid datosUsuario'>
-            <h2>Datos del Usuario:</h2>
-            <div class='col-md-6'>
-                <label class='labelDataUser'>Nombre: </label>
-                <p class='dataUser'>Manolo</p>
-                <label class='labelDataUser'>Apellidos: </label>
-                <p class='dataUser'>Manolo</p>
-                <label class='labelDataUser'>Cumpleaños: </label>
-                <p class='dataUser'>Manolo</p>
-                <label class='labelDataUser'>DNI: </label>
-                <p class='dataUser'>Manolo</p>
-            </div>
-            <div class='col-md-6'>
-                <label class='labelDataUser'>Lleva con nosotros desde...: </label>
-                <p class='dataUser'>Manolo</p>
-                <label class='labelDataUser'>Mail: </label>
-                <p class='dataUser'>Manolo</p>
-                <label class='labelDataUser'>Dirección: </label>
-                <p class='dataUser'>Manolo</p>
-                <label class='labelDataUser'>Teléfono: </label>
-                <p class='dataUser'>Manolo</p>
-            </div>
-        </div>
-        <div class='container-fluid aportesUsuario'>
-            <h2>Aportaciones del Usuario:</h2>
-            <div class='col-md-6'>
-                <h3>Reviews del Usuario:</h3>
-                <label class='labelDataUser'>Totales: </label>
-                <p class='dataUser'>Manolo</p>
-            </div>
-            <div class='col-md-6'>
-                <h3>Historias del cine del Usuario:</h3>
-                <label class='labelDataUser'>Totales: </label>
-                <p class='dataUser'>Manolo</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- <div id="creacionActor" class="contenedor" style="display: none;">
-            <form class="formulariosCreacion" action="index.php?option=login" method="POST">
+<link rel="stylesheet" type="text/css" href="css/login_style.css">
+<div>
+    <div class=" container">
+        <div id="creacionActor" class="contenedor">
+            <form class="formulariosCreacionMultiple" action="index.php?option=creacionactores" method="POST">
                 <h1>Creación de Actor:</h1>
                 <div id="divNombreActor">
                     <label id="labelNombreActor">Nombre del Actor: </label>
@@ -69,4 +26,41 @@
                     <input type="reset" id="resetActor" name="resetActor" value="Cancelar" />
                 </div>
             </form>
-        </div> -->
+        </div>
+        <div id="creacionRelacionActores" class="contenedor">
+            <form class="formulariosCreacionVarios" action="index.php?option=creacionactores" method="POST">
+                <h1>Creación de Relaciones [Actor - Película]:</h1>
+                <div id="divSelectActor">
+                    <label id="labelSelectActor">Actor: </label>
+                    <select id="inputSelectActor" name="inputSelectActor">
+                        <option disabled selected>Selecciona un Actor</option>
+                        <?php
+                        $results_array = modelCreacionActores::viewActores();
+                        foreach ($results_array as $actor) {
+                            echo "<option value='$actor[id_actor]'>"
+                                . utf8_encode($actor[nombre])." ". utf8_encode($actor[apellidos]). "</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div id="divSelectPelicula">
+                    <label id="labelSelectPelicula">Película: </label>
+                    <select id="inputSelectPelicula" name="inputSelectPelicula">
+                        <option disabled selected>Selecciona una Película</option>
+                        <?php
+                        $results_array = modelCreacionActores::viewPeliculas();
+                        foreach ($results_array as $pelicula) {
+                            echo "<option value='$pelicula[clave_pelicula]'>"
+                                . utf8_encode($pelicula[nombre]) . "</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div id="divBotonesAcceso">
+                    <input type="submit" id="submitRelacion" name="submitRelacion" value="Crear" />
+                    <input type="reset" id="resetRelacion" name="resetRelacion" value="Cancelar" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -16,6 +16,7 @@ if (isset($_POST['submitPelicula'])) {
 
 // Crear Poster para Pelicula
 if (isset($_POST['submitPoster'])) {
+    $clave_pelicula = $_POST['inputSelectPelicula'];
     $tamano = $_FILES["archivo"]['size'];
     $tipo = $_FILES["archivo"]['type'];
     $archivo = $_FILES["archivo"]['name'];
@@ -30,8 +31,9 @@ if (isset($_POST['submitPoster'])) {
             } else {
                 // guardamos el archivo a la carpeta física creada
                 $destino = "img/postersPeliculas/" . $prefijo . "_" . $archivo;
+                modelCreadorPeliculas::linkPoster($clave_pelicula, $destino);
                 if (move_uploaded_file($_FILES['archivo']['tmp_name'], $destino)) {
-                    $status = "Archivo subido: <b>" . $archivo . "</b>";
+                    // $status = "Archivo subido: <b>" . $archivo . "</b>";
                 } else {
                     $status = "Error al subir el archivo";
                 }
@@ -41,7 +43,7 @@ if (isset($_POST['submitPoster'])) {
         $status = "Error falta fichero";
     }
 
-    echo $status . "<br>";
+    // echo $status . "<br>";
 }
 
 include 'componentes/creacionpeliculas/view.php';
