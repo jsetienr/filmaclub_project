@@ -1,75 +1,93 @@
 <link rel="stylesheet" type="text/css" href="css/login_style.css">
 <div>
     <div class="container">
-        <div id="creacionProductos" class="contenedor">
-            <form class="formulariosCreacionMultiple" action="index.php?option=creacionproductos" method="POST">
-                <h1>Creación de Producto:</h1>
-                <div id="divNombreProducto">
-                    <label id="labelNombreProducto">Nombre del Producto: </label><label id="errlabelNombreProducto"></label>
-                    <input type="text" id="inputNombreProducto" name="inputNombreProducto" placeholder="Introduce Nombre" />
-                </div>
-                <div id="divDescripcionProducto">
-                    <label id="labelDescripcionProducto">Descripción: </label>
-                    <textarea id="inputDescripcionProducto" name="inputDescripcionProducto" rows="4" placeholder="Introduce Descripción"></textarea>
-                </div>
-                <div id="divPVPProducto">
-                    <label id="labelPVPProducto">Precio del Producto: </label><label id="errlabelPVPProducto"></label>
-                    <input type="text" id="inputPVPProducto" name="inputPVPProducto" placeholder="Introduce Precio" />
-                </div>
-                <div id="divFechaProducto">
-                    <label id="labelFechaProducto">Fecha del Registro: </label>
-                    <input type="date" id="inputFechaProducto" name="inputFechaProducto" placeholder="Introduce Fecha del Registro" />
-                </div>
-                <div id="divStockProducto">
-                    <label id="labelStockProducto">Stock del Producto: </label><label id="errlabelStockProducto"></label>
-                    <input type="text" id="inputStockProducto" name="inputStockProducto" placeholder="Introduce Stock" />
-                </div>
-                <div id="divTipoProducto">
-                    <label id="labelTipoProducto">Tipo de Producto: </label>
-                    <select id="inputTipoProducto" name="inputTipoProducto">
-                        <option disabled selected>Selecciona un Tipo</option>
-                        <?php
-                        $results_array = modelCreacionProductos::viewTypeProduct();
 
-                        foreach ($results_array as $tipo) {
-                            echo "<option value='".$tipo[id_tipo]."'>"
-                                . utf8_encode($tipo[descripcion]) . "</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-                <div id="divBotonesAcceso">
-                    <input type="submit" id="submitProducto" name="submitProducto" value="Crear" />
-                    <input type="reset" id="resetProducto" name="resetProducto" value="Cancelar" />
-                </div>
-            </form>
-        </div>
-        <div id="creacionImagenProductos" class="contenedor">
-            <form class="formulariosCreacionVarios" action="index.php?option=creacionproductos" method="POST" enctype="multipart/form-data">
-                <h1>Subida de Imagen del Producto:</h1>
-                <div id="divSelectProducto">
-                    <label id="labelSelectProducto">Producto: </label>
-                    <select id="inputSelectProducto" name="inputSelectProducto">
-                        <option disabled selected>Selecciona un Producto</option>
-                        <?php
-                        $results_array = modelCreacionProductos::viewProductos();
-                        foreach ($results_array as $producto) {
-                            echo "<option value='$producto[codigo_articulo]'>"
-                                . utf8_encode($producto[nombre]) . "</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-                <div id="divImagenProducto">
-                    <label id="labelImagenProducto">Imagen: </label><br />
-                    <input name="archivo" type="file" class="form-control" />
-                    <label for="file-upload" class="custom-file-upload"></label>
-                </div>
-                <div id="divBotonesAcceso">
-                    <input type="submit" id="submitImagen" name="submitImagen" value="Crear" />
-                    <input type="reset" id="resetImagen" name="resetImagen" value="Cancelar" />
-                </div>
-            </form>
-        </div>
+        <?php
+        if (
+            isset($_SESSION["usuario"]) && !empty($_SESSION["usuario"])
+            && ($_SESSION["usuario"] !== "") && ($_SESSION["usuario"] !== NULL)
+        ) {
+            echo "        <div id='creacionProductos' class='contenedor'>";
+            echo "            <form class='formulariosCreacionMultiple' action='index.php?option=creacionproductos' method='POST'>";
+            echo "                <h1>Creación de Producto:</h1>";
+            echo "                <div id='divNombreProducto'>";
+            echo "                    <label id='labelNombreProducto'>Nombre del Producto: </label><label id='errlabelNombreProducto'></label>";
+            echo "                    <input type='text' id='inputNombreProducto' name='inputNombreProducto' placeholder='Introduce Nombre' />";
+            echo "                </div>";
+            echo "                <div id='divDescripcionProducto'>";
+            echo "                    <label id='labelDescripcionProducto'>Descripción: </label>";
+            echo "                    <textarea id='inputDescripcionProducto' name='inputDescripcionProducto' rows='4' placeholder='Introduce Descripción'></textarea>";
+            echo "                </div>";
+            echo "                <div id='divPVPProducto'>";
+            echo "                    <label id='labelPVPProducto'>Precio del Producto: </label><label id='errlabelPVPProducto'></label>";
+            echo "                    <input type='text' id='inputPVPProducto' name='inputPVPProducto' placeholder='Introduce Precio' />";
+            echo "                </div>";
+            echo "                <div id='divFechaProducto'>";
+            echo "                    <label id='labelFechaProducto'>Fecha del Registro: </label>";
+            echo "                    <input type='date' id='inputFechaProducto' name='inputFechaProducto' placeholder='Introduce Fecha del Registro' />";
+            echo "                </div>";
+            echo "                <div id='divStockProducto'>";
+            echo "                    <label id='labelStockProducto'>Stock del Producto: </label><label id='errlabelStockProducto'></label>";
+            echo "                    <input type='text' id='inputStockProducto' name='inputStockProducto' placeholder='Introduce Stock' />";
+            echo "                </div>";
+            echo "                <div id='divTipoProducto'>";
+            echo "                    <label id='labelTipoProducto'>Tipo de Producto: </label>";
+            echo "                    <select id='inputTipoProducto' name='inputTipoProducto'>";
+            echo "                        <option disabled selected>Selecciona un Tipo</option>";
+
+
+            $results_array = modelCreacionProductos::viewTypeProduct();
+
+            foreach ($results_array as $tipo) {
+                echo "<option value='" . $tipo[id_tipo] . "'>"
+                    . utf8_encode($tipo[descripcion]) . "</option>";
+            }
+
+
+            echo "                    </select>";
+            echo "                </div>";
+            echo "                <div id='divBotonesAcceso'>";
+            echo "                    <input type='submit' id='submitProducto' name='submitProducto' value='Crear' />";
+            echo "                    <input type='reset' id='resetProducto' name='resetProducto' value='Cancelar' />";
+            echo "                </div>";
+            echo "            </form>";
+            echo "        </div>";
+            echo "        <div id='creacionImagenProductos' class='contenedor'>";
+            echo "            <form class='formulariosCreacionVarios' action='index.php?option=creacionproductos' method='POST' enctype='multipart/form-data'>";
+            echo "                <h1>Subida de Imagen del Producto:</h1>";
+            echo "                <div id='divSelectProducto'>";
+            echo "                    <label id='labelSelectProducto'>Producto: </label>";
+            echo "                    <select id='inputSelectProducto' name='inputSelectProducto'>";
+            echo "                        <option disabled selected>Selecciona un Producto</option>";
+
+
+            $results_array = modelCreacionProductos::viewProductos();
+            foreach ($results_array as $producto) {
+                echo "<option value='$producto[codigo_articulo]'>"
+                    . utf8_encode($producto[nombre]) . "</option>";
+            }
+
+
+            echo "                    </select>";
+            echo "                </div>";
+            echo "                <div id='divImagenProducto'>";
+            echo "                    <label id='labelImagenProducto'>Imagen: </label><br />";
+            echo "                    <input name='archivo' type='file' class='form-control' />";
+            echo "                    <label for='file-upload' class='custom-file-upload'></label>";
+            echo "                </div>";
+            echo "                <div id='divBotonesAcceso'>";
+            echo "                    <input type='submit' id='submitImagen' name='submitImagen' value='Crear' />";
+            echo "                    <input type='reset' id='resetImagen' name='resetImagen' value='Cancelar' />";
+            echo "                </div>";
+            echo "            </form>";
+            echo "        </div>";
+        } else {
+            echo "<div class='h-100 row align-items-center avisoNoLogin alert alert-warning' role='alert'>";
+            echo "Ups!... Parece que ahora mismo no hay ningún usuario en la sesión. <i class='fas fa-frown emoji'></i><br/>";
+            echo "Puedes acceder desde <a href='index.php?option=login'>Login</a> o dirigirte a <a href='index.php?option=home'>Inicio</a><br/>";
+            echo "</div>";
+        }
+        ?>
+
     </div>
 </div>

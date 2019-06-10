@@ -46,13 +46,36 @@
 
 /* Menu principal */
 
-#myNavbar ul li a {
+/* #myNavbar ul li a {
     text-decoration: none;
     color: #2E2E2E;
     font-size: 0.8em;
 }
 
 #myNavbar ul li a:hover {
+    color: white;
+    background-color: #45AED6;
+    border-radius: 10%;
+} */
+.navbarPublic ul li a{
+    text-decoration: none;
+    color: #2E2E2E;
+    font-size: 1.1em;
+}
+
+.navbarPublic ul li a:hover{
+    color: white;
+    background-color: #45AED6;
+    border-radius: 10%;
+}
+
+.navbarAdmin ul li a{
+    text-decoration: none;
+    color: #2E2E2E;
+    font-size: 0.8em;
+}
+
+.navbarAdmin ul li a:hover{
     color: white;
     background-color: #45AED6;
     border-radius: 10%;
