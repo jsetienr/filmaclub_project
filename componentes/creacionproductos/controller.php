@@ -9,7 +9,7 @@ if (isset($_POST['submitProducto'])) {
     $stock = $_POST['inputStockProducto'];
     $tipo_producto = $_POST['inputTipoProducto'];
 
-    modelCreacionProductos::viewTypeProduct($nombre_producto, $descripcion, $pvp, $fecha, $stock, $tipo_producto);
+    modelCreacionProductos::newProducto($nombre_producto, $descripcion, $pvp, $fecha, $stock, $tipo_producto);
 }
 
 // Crear Imagen para Producto

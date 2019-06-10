@@ -88,8 +88,14 @@
 			}
 			?>
 
-			<li><a href="index.php?option=tienda">FilmaShop <i class="fas fa-shopping-cart"></i></a></li>
-			<li><a href="index.php#equipo">About Us <i class="fas fa-users"></i></a></li>
+			<li lass="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">FilmaShop <i class="fas fa-shopping-cart"></i><span class="caret"></span></a>
+			<ul class="dropdown-menu">
+					<li><a href="index.php?option=complementos">Complementos de Cine <i class="fas fa-tshirt"></i></a></li>
+					<li><a href="index.php?option=figuras">Figuras de Cine <i class="fas fa-dragon"></i></a></li>
+					<li><a href="index.php?option=decoracion">Decoracion de Cine <i class="fas fa-pencil-ruler"></i></a></li>
+				</ul>
+		</li>
+			<li><a href="index.php?option=home#equipo">About Us <i class="fas fa-users"></i></a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<!-- Search -->

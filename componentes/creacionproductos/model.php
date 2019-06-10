@@ -1,6 +1,7 @@
 <?php
 
-class modelCreacionProductos{
+class modelCreacionProductos
+{
 
     public static function viewTypeProduct()
     {
@@ -19,9 +20,9 @@ class modelCreacionProductos{
         $db->query($sql);
         return $db->cargaMatriz();
     }
-    
+
     public static function newProducto(
-        $nombre_producto, 
+        $nombre_producto,
         $descripcion,
         $pvp,
         $fecha,
@@ -33,7 +34,9 @@ class modelCreacionProductos{
         $sql = "INSERT INTO `producto`(`nombre`, `descripcion`, `pvp`, `fecha`, `stock`, `tipo_producto`) 
         VALUES ('$nombre_producto', '$descripcion', '$pvp', '$fecha', $stock, $tipo_producto)";
 
+        // var_dump($sql);
         $db->query($sql);
+        // var_dump($db->affectedRows());
         return $db->affectedRows();
     }
 
@@ -62,5 +65,3 @@ class modelCreacionProductos{
         return $db->affectedRows();
     }
 }
-
-?>
