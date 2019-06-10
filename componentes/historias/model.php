@@ -33,6 +33,16 @@ class modelStories {
         return $db->cargaFila();                
      }
 
+     public static function viewActores($clave)
+     {
+         $db = new database();
+         $sql = "SELECT a.nombre, a.apellidos 
+         FROM pelicula p, actor a, actores_pelicula r 
+         WHERE p.clave_pelicula=r.clave_pelicula AND a.id_actor=r.id_actor AND p.clave_pelicula='$clave'";
+         $db->query($sql);
+         return $db->cargaMatriz();
+     }
+
 }
 
 ?>

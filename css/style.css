@@ -222,8 +222,21 @@
 
 .botonDesplegableDatos{
     margin-top: 8px;
+    font-size: 0.9em;
 }
 
 .independiente{
     margin-top: 1%;
+}
+
+.infoPeli {
+    background-color: #ffd2d3;
+    padding: 1em;
+    margin-top: 1.5%;
+}
+
+.datosPeli {
+    padding-bottom: 1%;
+    margin-bottom: 1%;
+    border-bottom: 1px solid rgb(77,255,77);
 }
