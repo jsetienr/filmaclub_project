@@ -96,6 +96,7 @@
 				</ul>
 		</li>
 			<li><a href="index.php?option=home#equipo">About Us <i class="fas fa-users"></i></a></li>
+			<li><a href="index.php?option=carrito"><i class="fas fa-shopping-cart"></i></a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<!-- Search -->

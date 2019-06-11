@@ -17,7 +17,7 @@
                 echo "                            <span>" . $figura['pvp'] . "€</span>";
                 // echo "                        <p>" . utf8_encode($figura['descripcion']) . "</p>";
                 echo "                        </div>";
-                echo "                        <a type='button' class='btn btn-success' name='carrito' href='index.php?option=carrito&idproducto=" . $figura['codigo_articulo'] . "'>Añadir al Carrito</a>";
+                echo "                        <a type='button' class='btn btn-success' name='carrito' href='index.php?option=carrito&idproductoadd=" . $figura['codigo_articulo'] . "'>Añadir al Carrito</a>";
                 echo "                    </div>";
                 echo "                </div>";
                 echo "            </div>";

@@ -17,7 +17,7 @@
                 echo "                            <span>" . $producto['pvp'] . "€</span>";
                 // echo "                        <p>" . utf8_encode($producto['descripcion']) . "</p>";
                 echo "                        </div>";
-                echo "                        <a type='button' class='btn btn-success' name='carrito' href='index.php?option=carrito&idproducto=" . $producto['codigo_articulo'] . "'>Añadir al Carrito</a>";
+                echo "                        <a type='button' class='btn btn-success' name='carrito' href='index.php?option=carrito&idproductoadd=" . $producto['codigo_articulo'] . "'>Añadir al Carrito</a>";
                 echo "                    </div>";
                 echo "                </div>";
                 echo "            </div>";
