@@ -27,7 +27,7 @@
             echo "                    <input type='text' id='inputLugarNacActor' name='inputLugarNacActor' placeholder='Introduce Lugar de nacimiento' />";
             echo "                </div>";
             echo "                <div id='divBotonesAcceso'>";
-            echo "                    <input type='submit' id='submitActor' name='submitActor' value='Crear' />";
+            echo "                    <input type='submit' id='submitActor' name='submitActor' value='Crear' disabled/>";
             echo "                    <input type='reset' id='resetActor' name='resetActor' value='Cancelar' />";
             echo "                </div>";
             echo "            </form>";
@@ -77,3 +77,4 @@
         
     </div>
 </div>
+<script src="./js/creaelementos_script.js"></script>

@@ -47,7 +47,7 @@
             echo "                    </select>";
             echo "                </div>";
             echo "                <div id='divBotonesAcceso'>";
-            echo "                    <input type='submit' id='submitProducto' name='submitProducto' value='Crear' />";
+            echo "                    <input type='submit' id='submitProducto' name='submitProducto' value='Crear' disabled/>";
             echo "                    <input type='reset' id='resetProducto' name='resetProducto' value='Cancelar' />";
             echo "                </div>";
             echo "            </form>";
@@ -91,3 +91,4 @@
 
     </div>
 </div>
+<script src="./js/creaelementos_script.js"></script>

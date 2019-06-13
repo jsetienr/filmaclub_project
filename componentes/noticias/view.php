@@ -21,9 +21,9 @@
                     echo "                 <img src='" . $noticia['poster'] . "' alt='poster' height='220' width='150'>";
                     echo "             </div>";
                     echo "             <div class='col-md-10'>";
-                    echo "                 <h3><strong>" . $noticia['titular'] . "</strong></h3>";
+                    echo "                 <h3><strong>" . stripslashes($noticia['titular']) . "</strong></h3>";
                     echo "                 <h5><i>" . $noticia['nombre'] . "</i></h5>";
-                    echo "                 <p>" . $noticia['noticia'] . "</p>";
+                    echo "                 <p>" . stripslashes($noticia['noticia']) . "</p>";
                     echo "                 <span>" . $noticia['fecha'] . "</span>";
                     echo "             </div>";
                     echo "         </div>";

@@ -32,10 +32,10 @@
                     echo "         </div>";
                     echo "         </div>";
                     echo "         <div class='col-md-9'>";
-                    echo "             <h3><strong>" . utf8_encode($pelicula['nombre']) . "</strong></h3>";
+                    echo "             <h3><strong>" . utf8_encode(stripslashes($pelicula['nombre'])) . "</strong></h3>";
                     echo "             <div class='col-md-4'>";
                     echo "                 <label class='labelDataMovie'>Director: </label>";
-                    echo "                 <p class='dataMovie'>" . utf8_encode($pelicula['director']) . "</p>";
+                    echo "                 <p class='dataMovie'>" . utf8_encode(stripslashes($pelicula['director'])) . "</p>";
                     echo "             </div>";
                     echo "             <div class='col-md-4'>";
                     echo "                 <label class='labelDataMovie'>Año: </label>";
@@ -56,7 +56,7 @@
                     }
                     echo "                        </div>";
                     echo "                             <span>" . $pelicula['duracion'] . "mins</span>";
-                    echo "                         <p>" . utf8_encode($pelicula['descripcion']) . "</p>";
+                    echo "                         <p>" . utf8_encode(stripslashes($pelicula['descripcion'])) . "</p>";
                     echo "                    </div>";
                     echo "                </div>";
                     echo "            </div>";
@@ -66,10 +66,10 @@
                     foreach ($curiosidades as $curiosidad) {
                         echo "                    <div class='curiosidad'>";
                         echo "                        <div class='datosCuriosidad'>";
-                        echo "                             <h3>" . $curiosidad['titulo'] . "</h3>";
+                        echo "                             <h3>" . stripslashes($curiosidad['titulo']) . "</h3>";
                         echo "                             <span>" . $curiosidad['alias_usuario'] . "</span>";
                         echo "                        </div>";
-                        echo "                         <p>" . $curiosidad['curiosidad'] . "</p>";
+                        echo "                         <p>" . stripslashes($curiosidad['curiosidad']) . "</p>";
                         echo "                    </div>";
                     }
                     echo "                </div>";

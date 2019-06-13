@@ -45,7 +45,7 @@
             echo "                    <textarea id='inputDescripcionPelicula' name='inputDescripcionPelicula' rows='6' placeholder='Introduce Descripción'></textarea>";
             echo "                </div>";
             echo "                <div id='divBotonesAcceso'>";
-            echo "                    <input type='submit' id='submitPelicula' name='submitPelicula' value='Crear' />";
+            echo "                    <input type='submit' id='submitPelicula' name='submitPelicula' value='Crear' disabled/>";
             echo "                    <input type='reset' id='resetPelicula' name='resetPelicula' value='Cancelar' />";
             echo "                </div>";
             echo "            </form>";
@@ -72,6 +72,19 @@
             echo "                    <input name='archivo' type='file' class='form-control' />";
             echo "                    <label for='file-upload' class='custom-file-upload'></label>";
             echo "                </div>";
+            if (
+                isset($_FILES["archivo"]) && !empty($_FILES["archivo"])
+                && ($_FILES["archivo"] !== "") && ($_FILES["archivo"] !== NULL)
+            ) {
+                echo "                <div id='infoPoster'>";
+                echo "                    <label id='labelNamePoster'>Nombre del Poster: </label><br />";
+                echo "                    <p>".$_FILES["archivo"]['name']."</p>";
+                echo "                    <label id='labelTipoPoster'>Tipo del Poster: </label><br />";
+                echo "                    <p>".$_FILES["archivo"]['type']."</p>";
+                echo "                    <label id='labelTamanoPoster'>Tamaño del Poster: </label><br />";
+                echo "                    <p>".$_FILES["archivo"]['size']."</p>";
+                echo "                </div>";
+            }
             echo "                <div id='divBotonesAcceso'>";
             echo "                    <input type='submit' id='submitPoster' name='submitPoster' value='Crear' />";
             echo "                    <input type='reset' id='resetPoster' name='resetPoster' value='Cancelar' />";

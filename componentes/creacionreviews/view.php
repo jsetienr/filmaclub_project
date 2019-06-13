@@ -66,7 +66,7 @@
             echo "                </div>";
             echo "            </div>";
             echo "            <div id='divBotonesAcceso'>";
-            echo "                <input type='submit' id='submitReview' name='submitReview' value='Crear' />";
+            echo "                <input type='submit' id='submitReview' name='submitReview' value='Crear' disabled/>";
             echo "                <input type='reset' id='resetReview' name='resetReview' value='Cancelar' />";
             echo "            </div>";
             echo "        </form>";
@@ -81,3 +81,4 @@
         ?>
     </div>
 </div>
+<script src="./js/creation_public.js"></script>

@@ -31,7 +31,7 @@
             echo "              <textarea id='inputContenidoCuriosidad' name='inputContenidoCuriosidad' rows='6' placeholder='Introduce Contenido'></textarea>";
             echo "          </div>";
             echo "          <div id='divBotonesAcceso'>";
-            echo "              <input type='submit' id='submitCuriosidad' name='submitCuriosidad' value='Crear' />";
+            echo "              <input type='submit' id='submitCuriosidad' name='submitCuriosidad' value='Crear' disabled/>";
             echo "              <input type='reset' id='resetCuriosidad' name='resetCuriosidad' value='Cancelar' />";
             echo "          </div>";
             echo "      </form>";
@@ -46,3 +46,4 @@
         ?>
     </div>
 </div>
+<script src="./js/creation_public.js"></script>

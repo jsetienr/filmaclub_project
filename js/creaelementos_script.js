@@ -1,70 +1,93 @@
 $(document).ready(init);
 
 function init() {
-    var buttonClicked;
-    $("#creaPeliculaBtn").on("click", toggleDivs);
-    $("#creaActorBtn").on("click", toggleDivs);
-    $("#creaReviewBtn").on("click", toggleDivs);
-    $("#creaHistoriaBtn").on("click", toggleDivs);
-    $("#creaNoticiaBtn").on("click", toggleDivs);
-    $("#creaProductoBtn").on("click", toggleDivs);
 
+    $('#submitActor').attr('disabled', true);
+    $('#submitPelicula').attr('disabled', true);
+    $('#submitNoticia').attr('disabled', true);
+    $('#submitProducto').attr('disabled', true);
+
+
+    $('#inputNombreActor, #inputApellidosActor, #inputFechaNacActor, #inputLugarNacActor').bind('input propertychange', function () {
+
+        checkFieldsActor();
+
+    });
+
+    $('#inputNombrePelicula, #inputDirectorPelicula, #inputAnyoPelicula, #inputGeneroPelicula, #inputDuracionPelicula, #inputDescripcionPelicula').bind('input propertychange', function () {
+
+        checkFieldsPelicula();
+
+    });
+
+    $('#inputSelectPelicula, #inputTituloNoticia, #inputContenidoNoticia').bind('input propertychange', function () {
+
+        checkFieldsNoticia();
+
+    });
+
+    $('#inputNombreProducto, #inputDescripcionProducto, #inputPVPProducto, #inputFechaProducto, #inputStockProducto, #inputTipoProducto').bind('input propertychange', function () {
+
+        checkFieldsProducto();
+
+    });
 }
 
-function toggleDivs() {
-    buttonClicked = $(this).attr('id');
-    // console.log(buttonClicked);
-    switch (buttonClicked) {
-        case 'creaPeliculaBtn':
-            $("#creacionPeliculas").show();
-            $("#creacionActor").hide();
-            $("#creacionReviews").hide();
-            $("#creacionHistorias").hide();
-            $("#creacionNoticias").hide();
-            $("#creacionProductos").hide();
-            break;
-        case 'creaActorBtn':
-            $("#creacionPeliculas").hide();
-            $("#creacionActor").show();
-            $("#creacionReviews").hide();
-            $("#creacionHistorias").hide();
-            $("#creacionNoticias").hide();
-            $("#creacionProductos").hide();
-            break;
-        case 'creaReviewBtn':
-            $("#creacionPeliculas").hide();
-            $("#creacionActor").hide();
-            $("#creacionReviews").show();
-            $("#creacionHistorias").hide();
-            $("#creacionNoticias").hide();
-            $("#creacionProductos").hide();
-            break;
-        case 'creaHistoriaBtn':
-            $("#creacionPeliculas").hide();
-            $("#creacionActor").hide();
-            $("#creacionReviews").hide();
-            $("#creacionHistorias").show();
-            $("#creacionNoticias").hide();
-            $("#creacionProductos").hide();
-            break;
-        case 'creaNoticiaBtn':
-            $("#creacionPeliculas").hide();
-            $("#creacionActor").hide();
-            $("#creacionReviews").hide();
-            $("#creacionHistorias").hide();
-            $("#creacionNoticias").show();
-            $("#creacionProductos").hide();
-            break;
-        case 'creaProductoBtn':
-            $("#creacionPeliculas").hide();
-            $("#creacionActor").hide();
-            $("#creacionReviews").hide();
-            $("#creacionHistorias").hide();
-            $("#creacionNoticias").hide();
-            $("#creacionProductos").show();
-            break;
-        default:
-            console.log("No se detecta nada");
-            break;
-    };
+function checkFieldsActor() {
+
+    if ($('#inputNombreActor').val() != ""
+        && $('#inputApellidosActor').val() != ""
+        && $('#inputFechaNacActor').val() != ""
+        && $('#inputLugarNacActor').val() != "") {
+
+        $('#submitActor').attr('disabled', false);
+
+    } else {
+        $('#submitActor').attr('disabled', true);
+    }
+}
+
+function checkFieldsPelicula() {
+
+    if ($('#inputGeneroPelicula').val().length != 0
+        && $('#inputNombrePelicula').val() != ""
+        && $('#inputDirectorPelicula').val() != ""
+        && $('#inputAnyoPelicula').val() != ""
+        && $('#inputDuracionPelicula').val() != ""
+        && $('#inputDescripcionPelicula').val() != "") {
+
+        $('#submitPelicula').attr('disabled', false);
+
+    } else {
+        $('#submitPelicula').attr('disabled', true);
+    }
+}
+
+function checkFieldsNoticia() {
+
+    if ($('#inputSelectPelicula').val().length != 0
+        && $('#inputTituloNoticia').val() != ""
+        && $('#inputContenidoNoticia').val() != "") {
+
+        $('#submitNoticia').attr('disabled', false);
+
+    } else {
+        $('#submitNoticia').attr('disabled', true);
+    }
+}
+
+function checkFieldsProducto() {
+
+    if ($('#inputTipoProducto').val().length != 0
+        && $('#inputNombreProducto').val() != ""
+        && $('#inputDescripcionProducto').val() != ""
+        && $('#inputPVPProducto').val() != ""
+        && $('#inputFechaProducto').val() != ""
+        && $('#inputTipoProducto').val() != "") {
+
+        $('#submitProducto').attr('disabled', false);
+
+    } else {
+        $('#submitProducto').attr('disabled', true);
+    }
 }

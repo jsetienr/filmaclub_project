@@ -73,7 +73,18 @@
         <div class="col-md-4">
             <div class="contenido-reciente">
                 <h3>Reviews Recientes...</h3>
-
+                <?php
+                $arrayReviews = modelHome::getReviews();
+                foreach ($arrayReviews as  $review) {
+                    echo "                    <a href='index.php?option=reviews'>";
+                    echo "                    <div class='listElementsHome'>";
+                    echo "                    <h4>" . $review['titulo'] . "</h4>";
+                    echo "                    <label>Película: </label><label class='datoListHome'>" . utf8_encode($review['nombre']) . "</label><br/>";
+                    echo "                    <label>Nota: </label><label class='datoListHome'>" . $review['puntuacion'] . "</label><br/>";
+                    echo "                    </div>";
+                    echo "                    </a>";
+                }
+                ?>
             </div>
         </div>
 
@@ -81,15 +92,37 @@
         <div class="col-md-4">
             <div class="contenido-reciente">
                 <h3>Historias del Cine Recientes...</h3>
-
+                <?php
+                $arrayStories = modelHome::getStories();
+                foreach ($arrayStories as  $historia) {
+                    echo "                    <a href='index.php?option=historias'>";
+                    echo "                    <div class='listElementsHome2'>";
+                    echo "                    <h4>" . $historia['titulo'] . "</h4>";
+                    echo "                    <label>Película: </label><label class='datoListHome'>" . utf8_encode($historia['nombre']) . "</label><br/>";
+                    echo "                    <label>Usuario: </label><label class='datoListHome'>" . $historia['alias_usuario'] . "</label><br/>";
+                    echo "                    </div>";
+                    echo "                    </a>";
+                }
+                ?>
             </div>
         </div>
 
-        <!--FilmaShop-->
+        <!--Noticias-->
         <div class="col-md-4">
             <div class="contenido-reciente">
-                <h3>Productos Recientes...</h3>
-
+                <h3>Noticias Recientes...</h3>
+                <?php
+                $arrayNoticias = modelHome::getNoticias();
+                foreach ($arrayNoticias as  $noticia) {
+                    echo "                    <a href='index.php?option=noticias'>";
+                    echo "                    <div class='listElementsHome3'>";
+                    echo "                    <h4>" . $noticia['titular'] . "</h4>";
+                    echo "                    <label>Película: </label><label class='datoListHome'>" . utf8_encode($noticia['nombre']) . "</label><br/>";
+                    echo "                    <label>Fecha: </label><label class='datoListHome'>" . $noticia['fecha'] . "</label><br/>";
+                    echo "                    </div>";
+                    echo "                    </a>";
+                }
+                ?>
             </div>
         </div>
     </div>

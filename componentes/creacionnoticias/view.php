@@ -31,7 +31,7 @@ echo "                    <label id='labelContenidoNoticia'>Contenido: </label>"
 echo "                    <textarea id='inputContenidoNoticia' name='inputContenidoNoticia' rows='10' placeholder='Introduce Contenido'></textarea>";
 echo "                </div>";
 echo "                <div id='divBotonesAcceso'>";
-echo "                    <input type='submit' id='submitNoticia' name='submitNoticia' value='Crear' />";
+echo "                    <input type='submit' id='submitNoticia' name='submitNoticia' value='Crear' disabled/>";
 echo "                    <input type='reset' id='resetNoticia' name='resetNoticia' value='Cancelar' />";
 echo "                </div>";
 echo "            </form>";
@@ -39,3 +39,4 @@ echo "        </div>";
                     }?>
     </div>
 </div>
+<script src="./js/creaelementos_script.js"></script>

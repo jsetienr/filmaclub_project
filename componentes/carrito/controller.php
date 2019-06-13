@@ -130,12 +130,15 @@ if (isset($_SESSION['cesta'])) {
 }
 
 if (isset($_POST['comprabtn'])) {
-    $id_proceso = modelCarrito::randHash(25);
-    $id_relacion = modelCarrito::randHash(25);
+    $id_proceso = modelCarrito::randHash(20);
+    $id_relacion = modelCarrito::randHash(20);
+    $fecha = date('mdYhis');
+    $cod_proceso = $fecha . $id_proceso;
+    $cod_relacion = $fecha . $id_relacion;
 
     for ($i = 0; $i < count($_SESSION['cesta']); $i++) {
 
-        $id = $id_proceso;
+        $id = $cod_proceso;
         $cod = $_SESSION['cesta'][$i]['Id'];
         $cantidad = $_SESSION['cesta'][$i]['Cantidad'];
         $importe = ($_SESSION['cesta'][$i]['Precio'] * $_SESSION['cesta'][$i]['Cantidad']);
@@ -143,12 +146,12 @@ if (isset($_POST['comprabtn'])) {
         modelCarrito::insertProceso($id, $cod, $cantidad, $importe);
     }
 
-    modelCarrito::insertRel($id_relacion, $id_proceso);
+    modelCarrito::insertRel($cod_relacion, $cod_proceso);
 
     $alias = $_SESSION["usuario"];
     $cantidad = $_POST['pagoTotal'];
 
-    modelCarrito::createCompra($alias, $cantidad, $id_relacion);
+    modelCarrito::createCompra($alias, $cantidad, $cod_relacion);
 
     unset($_SESSION['cesta']);
 }

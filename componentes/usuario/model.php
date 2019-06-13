@@ -54,4 +54,25 @@ class modelUsuario
          return $db->cargaFila();                
       }
 
+      public static function viewCompras($alias)
+      {
+          $db = new database();
+          $sql = "SELECT a.cantidad, c.alias_usuario, c.importe_total, c.fecha_compra, p.nombre, a.importe 
+          FROM producto p, relacion_proceso_compra r, proceso_compra c, articulo_cliente a 
+          WHERE r.id_sesion=c.id_proceso AND r.id_proceso=a.id_proceso 
+          AND p.codigo_articulo=a.codigo_articulo AND c.alias_usuario = '$alias'";
+          $db->query($sql);
+         //  var_dump( $db->cargaMatriz());
+          return $db->cargaMatriz();                
+       }
+
+       public static function countCompras($alias)
+       {
+           $db = new database();
+           $sql = "SELECT COUNT(*) num 
+           FROM proceso_compra  
+           WHERE alias_usuario='$alias'";
+           $db->query($sql);
+           return $db->cargaFila();                
+        }
 }

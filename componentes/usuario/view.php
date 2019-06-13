@@ -76,7 +76,7 @@
             if ($contReviews > 0) {
                 echo "        <label class='labelDataUser'>Peliculas: </label>";
                 foreach ($showReviews as $value) {
-                    echo "        <p class='dataUser'>".utf8_encode($value['nombre'])." [Nota: ".$value['puntuacion']."]</p>";
+                    echo "        <p class='dataUser'>" . utf8_encode($value['nombre']) . " [Nota: " . $value['puntuacion'] . "]</p>";
                 }
             }
             echo "    </div>";
@@ -87,12 +87,36 @@
             if ($contHistorias > 0) {
                 echo "        <label class='labelDataUser'>Peliculas: </label>";
                 foreach ($showHistorias as $value) {
-                    echo "        <p class='dataUser'>".utf8_encode($value['nombre'])."</p>";
+                    echo "        <p class='dataUser'>" . utf8_encode($value['nombre']) . "</p>";
                 }
             }
             echo "    </div>";
             echo "  </div>";
             echo " </div>";
+            $numCompras = modelUsuario::countCompras($_SESSION["usuario"]);
+            if ($numCompras['num'] > 0) {
+                $arrayCompras = modelUsuario::viewCompras($_SESSION["usuario"]);
+                echo " <div class='container-fluid comprasUsuario'>";
+                echo "  <div class='row'>";
+                echo "        <h2>Compras del Usuario: " . $numCompras['num'] . "</h2>";
+                // echo "       <div class='row'>";
+                foreach ($arrayCompras as  $compra) {
+                    echo "        <div class='col-md-6'>";
+                    echo "            <label class='labelDataUser'>Nombre del Artículo: </label>";
+                    echo "            <p class='dataUser'>" . $compra['nombre'] . "</p>";
+                    echo "            <label class='labelDataUser'>Cantidad: </label>";
+                    echo "            <p class='dataUser'>" . $compra['cantidad'] . "</p>";
+                    echo "            <label class='labelDataUser'>Importe: </label>";
+                    echo "            <p class='dataUser'>" . $compra['importe'] . "</p>";
+                    echo "            <label class='labelDataUser'>Fecha de Compra: </label>";
+                    echo "            <p class='dataUser'>" . $compra['fecha_compra'] . "</p>";
+                    echo "        </div>";
+                }
+                echo "      </div>";
+                echo "   </div>";
+            }
+            // echo "    </div>";
+            // echo " </div>";
         } else {
             echo "<div class='h-100 row align-items-center'>";
             echo "Ups!... Parece que ahora mismo no hay ningún usuario en la sesión. <i class='fas fa-frown emoji'></i><br/>";

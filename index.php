@@ -22,6 +22,7 @@ include 'librerias/framework.php';
     <script src="css/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- JavaScript propio que usaremos -->
     <!-- <script src="./js/index.js"></script> -->
+    
 </head>
 
 <body>

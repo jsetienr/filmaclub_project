@@ -29,6 +29,9 @@ class modelCreacionProductos
         $stock,
         $tipo_producto
     ) {
+
+        $descripcion=addslashes($descripcion);
+
         $db = new database();
         $sql = ("SET NAMES 'utf8'");
         $sql = "INSERT INTO `producto`(`nombre`, `descripcion`, `pvp`, `fecha`, `stock`, `tipo_producto`) 

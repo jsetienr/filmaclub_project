@@ -21,6 +21,9 @@ class modelCreadorPeliculas
         $duracion,
         $descripcion
     ) {
+
+        $descripcion= addslashes($descripcion);
+
         $db = new database();
         $sql = ("SET NAMES 'utf8'");
         $sql = "INSERT INTO `pelicula`(`nombre`, `director`, `anyo`, `genero`, `duracion`, `descripcion`) 

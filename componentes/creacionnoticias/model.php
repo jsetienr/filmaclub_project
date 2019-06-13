@@ -1,6 +1,7 @@
 <?php
 
-class modelCreacionNoticias {
+class modelCreacionNoticias
+{
 
     public static function viewPeliculas()
     {
@@ -15,6 +16,10 @@ class modelCreacionNoticias {
         $titular,
         $noticia
     ) {
+
+        $titular = addslashes($titular);
+        $noticia = addslashes($noticia);
+
         $db = new database();
         $sql = ("SET NAMES 'utf8'");
         $sql = "INSERT INTO `noticias_pelicula`(`clave_pelicula`, `titular`, `noticia`) 

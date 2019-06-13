@@ -28,7 +28,7 @@
                 echo "                        <td class='filaProducto'>" .  utf8_encode($datos[$i]['Precio']) . "</td>";
                 // echo "                        <a type='button' class='btn btn-success' name='carrito' href='index.php?option=carrito&idproductoadd=" . $datos[$i]['idproducto'] . "'><i class='fas fa-plus-square'></i></a>";
                 // echo "                        <td> <input type='number' class='form-control text-center w-100' value='" . $datos[$i]['Cantidad'] . "'> </td>";
-                echo "                        <td class='filaProducto'><a type='button' class='btn btn-success' name='carrito' href='index.php?option=carrito&idproductoadd=" . $datos[$i]['Id']
+                echo "                        <td class='filaProducto tdCantidad'><a type='button' class='btn btn-success' name='carrito' href='index.php?option=carrito&idproductoadd=" . $datos[$i]['Id']
                     . "'><i class='fas fa-plus-square'></i></a><input class='cantidadProductoCarrito' type='text' value='" . $datos[$i]['Cantidad'] . "' disabled/><a type='button' class='btn btn-danger' name='carrito' href='index.php?option=carrito&idproductorm=" . $datos[$i]['Id']
                     . "'><i class='fas fa-minus-square'></i></a></td>";
                 echo "                        <td class='filaProducto'>" . ($datos[$i]['Precio'] * $datos[$i]['Cantidad']) . "</td>";

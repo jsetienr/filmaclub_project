@@ -67,7 +67,7 @@ class modelCarrito
 
 
         $db = new database();
-        $sql = "INSERT INTO `proceso_compra`(`alias_usuario`, `importe_total`, `id_proceso`) VALUES ('$alias', '$cantidad', $id_proceso)";
+        $sql = "INSERT INTO `proceso_compra`(`alias_usuario`, `importe_total`, `id_proceso`) VALUES ('$alias', '$cantidad', '$id_proceso')";
 
         $db->query($sql);
         // var_dump($sql);

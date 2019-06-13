@@ -32,7 +32,7 @@
                     echo "         </div>";
                     echo "         </div>";
                     echo "         <div class='col-md-9'>";
-                    echo "             <h3><strong>" . utf8_encode($pelicula['nombre']) . "</strong></h3>";
+                    echo "             <h3><strong>" . utf8_encode(stripslashes($pelicula['nombre'])) . "</strong></h3>";
                     echo "             <div class='col-md-4'>";
                     echo "                 <label class='labelDataMovie'>Director: </label>";
                     echo "                 <p class='dataMovie'>" . utf8_encode($pelicula['director']) . "</p>";
@@ -56,7 +56,7 @@
                     }
                     echo "                        </div>";
                     echo "                             <span>" . $pelicula['duracion'] . "mins</span>";
-                    echo "                         <p>" . utf8_encode($pelicula['descripcion']) . "</p>";
+                    echo "                         <p>" . utf8_encode(stripslashes($pelicula['descripcion'])) . "</p>";
                     echo "                    </div>";
                     echo "                </div>";
                     echo "            </div>";
@@ -66,10 +66,10 @@
                     foreach ($arrayReviews as $review) {
                         echo "                    <div class='curiosidad'>";
                         echo "                        <div class='datosCuriosidad'>";
-                        echo "                             <h3>" . $review['titulo'] . " <i>(Nota: ".$review['puntuacion'].")</i></h3>";
+                        echo "                             <h3>" . stripslashes($review['titulo']) . " <i>(Nota: ".$review['puntuacion'].")</i></h3>";
                         echo "                             <span>" . $review['alias_usuario'] . "</span>";
                         echo "                        </div>";
-                        echo "                         <p>" . $review['contenido_review'] . "</p>";
+                        echo "                         <p>" . stripslashes($review['contenido_review']) . "</p>";
                         echo "                    </div>";
                     }
                     echo "                </div>";

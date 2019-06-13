@@ -108,6 +108,38 @@
     font-size: 2.5em;
 }
 
+/* HOME */
+
+.listElementsHome{
+    margin-top: 1%;
+    border: solid #b9baff;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: #baffb9;
+}
+
+.listElementsHome2{
+    margin-top: 1%;
+    border: solid #baffb9;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: #b9baff;
+}
+
+.listElementsHome3{
+    margin-top: 1%;
+    border: solid #b9ffdb;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: #ffdbb9;
+}
+
+.datoListHome{
+    font-style: italic;
+    color: blue;
+    margin-left: 15px;
+}
+
 /* SECCION Contenido Reciente */
 
 #contenido {
@@ -204,6 +236,14 @@
     padding: 2%;
     border-radius: 10px;
     background-color: #ffd2e9;
+}
+
+.comprasUsuario {
+    margin-top: 1%;
+    border: solid #9affff;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: #ffff9a;
 }
 
 .emoji {
@@ -311,4 +351,8 @@
 
 .filaProducto{
     vertical-align: middle;
+}
+
+.tdCantidad{
+    width: 155px;
 }

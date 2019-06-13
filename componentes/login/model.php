@@ -9,21 +9,19 @@ class modelLogin
         $sql = "SELECT u.alias 
         FROM usuario u 
         WHERE u.alias='$alias' AND u.contrasenya=MD5('$passwd')";
-        // var_dump($sql);
         $db->query($sql);
 
         $db->cargaFila();
 
-        // echo "<br/>Lineas mostradas: ", $db->affectedRows();
-        // echo "<br/>";
-
         if ($db->affectedRows() == 1) {
             $_SESSION["usuario"] = $alias;
-            // echo "Usuario de la sesion Final: ", $_SESSION["usuario"];
             return true;
         } else {
-            // echo "Usuario de la sesion: ", $_SESSION["usuario"];
-            // echo "<br/>WE HAVE A PROBLEM";
+
+            echo " <div class='alert alert-warning' role='alert'>";
+            echo "  Vaya, parece que el login no era correcto... <i class='fas fa-grin-beam-sweat icon-2x'></i>";
+            echo " </div>";
+        
             return false;
         }
     }
@@ -45,11 +43,45 @@ class modelLogin
         $sql = "INSERT INTO `usuario`
         (`alias`, `contrasenya`, `nombre`, `apellidos`, `dni`, `fecha_nacimiento`, `mail`, `direccion`, `telefono`, `tipo_usuario`)
          VALUES 
-        ('$alias', MD5('$contrasenya'), '$nombre', '$apellidos', '$dni', '$fecha_nacimiento', '$mail', '$direccion', $telefono, $tipo_usuario)";
+         ('$alias', MD5('$contrasenya'), '$nombre', '$apellidos', '$dni', '$fecha_nacimiento', '$mail', '$direccion', $telefono, $tipo_usuario)";
 
         // var_dump($sql);
         $db->query($sql);
         // var_dump($db->affectedRows());
+        if ($db->affectedRows() > 0) {
+            echo " <div class='alert alert-success' role='alert'>";
+            echo "  Usuario insertado con éxito! <i class='fas fa-laugh-beam icon-2x'></i>";
+            echo " </div>";
+        } else {
+            echo " <div class='alert alert-warning' role='alert'>";
+            echo "  Ha habido un problema al insertar el usuario <i class='fas fa-grin-beam-sweat icon-2x'></i>";
+            echo " </div>";
+        }
         return $db->affectedRows();
+    }
+
+    public static function viewAlias($alias)
+    {
+        $db = new database();
+        $sql = "SELECT u.alias 
+        FROM usuario u 
+        WHERE u.alias='$alias'";
+        // var_dump($sql);
+        $db->query($sql);
+
+        return $db->cargaFila();
+    }
+
+    function buscaAlias($alias)
+    {
+        sleep(3);
+        $resultado = modelLogin::viewAlias($alias);
+        $output = new xajaxResponse();
+        if ($resultado['alias'] != $alias) {
+            $output->assign("respuestaAlias", "innerHTML", "El alias elegido ya está en uso");
+        } else {
+            $output->assign("respuestaAlias", "innerHTML", "El alias elegido es válido");
+        }
+        return $output;
     }
 }
