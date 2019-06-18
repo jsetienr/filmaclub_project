@@ -44,7 +44,7 @@
             echo "<div class='container-fluid datosUsuario'>";
             echo "        <h2>Datos del Usuario:</h2>";
             echo "       <div class='row'>";
-            echo "        <div class='col-md-6'>";
+            echo "        <div class='col-md-6 col-xs-12'>";
             echo "            <label class='labelDataUser'>Nombre: </label>";
             echo "            <p class='dataUser'>$nombreUsuario</p>";
             echo "            <label class='labelDataUser'>Apellidos: </label>";
@@ -54,7 +54,7 @@
             echo "            <label class='labelDataUser'>DNI: </label>";
             echo "            <p class='dataUser'>$dniUsuario</p>";
             echo "        </div>";
-            echo "        <div class='col-md-6'>";
+            echo "        <div class='col-md-6 col-xs-12'>";
             echo "            <label class='labelDataUser'>Lleva con nosotros desde...: </label>";
             echo "            <p class='dataUser'>$registroUsuario</p>";
             echo "            <label class='labelDataUser'>Mail: </label>";
@@ -69,7 +69,7 @@
             echo " <div class='container-fluid aportesUsuario'>";
             echo "  <div class='row'>";
             echo "    <h2>Aportaciones del Usuario:</h2>";
-            echo "    <div class='col-md-6'>";
+            echo "    <div class='col-md-6 col-xs-12'>";
             echo "        <h3>Reviews del Usuario:</h3>";
             echo "        <label class='labelDataUser'>Totales: </label>";
             echo "        <p class='dataUser'>$contReviews</p>";
@@ -80,7 +80,7 @@
                 }
             }
             echo "    </div>";
-            echo "    <div class='col-md-6'>";
+            echo "    <div class='col-md-6 col-xs-12'>";
             echo "        <h3>Historias del cine del Usuario:</h3>";
             echo "        <label class='labelDataUser'>Totales: </label>";
             echo "        <p class='dataUser'>$contHistorias</p>";
@@ -101,7 +101,7 @@
                 echo "        <h2>Compras del Usuario: " . $numCompras['num'] . "</h2>";
                 // echo "       <div class='row'>";
                 foreach ($arrayCompras as  $compra) {
-                    echo "        <div class='col-md-6'>";
+                    echo "        <div class='col-md-6 col-xs-12'>";
                     echo "            <label class='labelDataUser'>Nombre del Artículo: </label>";
                     echo "            <p class='dataUser'>" . $compra['nombre'] . "</p>";
                     echo "            <label class='labelDataUser'>Cantidad: </label>";

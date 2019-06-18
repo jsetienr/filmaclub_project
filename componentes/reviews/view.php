@@ -3,7 +3,7 @@
     <div class="row">
         <h1>REVIEWS DE CINE</h1>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12 col-xs-12">
         <section class="container-fluid" id="contenido">
             <div class="cabecera-seccion row">
                 <h2>Nuestras películas con Reviews: </h2>
@@ -20,33 +20,33 @@
                         $contador = $value;
                     }
 
-                    echo " <div class='col-md-12'>";
+                    echo " <div class='col-md-12 col-xs-12'>";
                     echo "     <div class='contenido-reciente independiente container-fluid'>";
-                    echo "         <div class='col-md-3'>";
-                    echo "         <div class='col-md-6'>";
+                    echo "         <div class='col-md-3 col-xs-12'>";
+                    echo "         <div class='col-md-6 col-xs-12'>";
                     echo "             <img src='" . $pelicula['poster'] . "' class='align-self-center mr-3 rounded' alt='poster' height='128' width='90'>";
                     echo "         </div>";
-                    echo "         <div class='col-md-6'>";
+                    echo "         <div class='col-md-6 col-xs-12'>";
                     echo "             <button type='button' class='btn btn-danger btn-lg btn-block botonDesplegableDatos' data-toggle='collapse' data-target='#info_pelicula" . $i . "'>Información</button>";
                     echo "             <button type='button' class='btn btn-success btn-lg btn-block botonDesplegableDatos' data-toggle='collapse' data-target='#info_curiosidades" . $i . "'>Reviews</button>";
                     echo "         </div>";
                     echo "         </div>";
-                    echo "         <div class='col-md-9'>";
+                    echo "         <div class='col-md-9 col-xs-12'>";
                     echo "             <h3><strong>" . utf8_encode(stripslashes($pelicula['nombre'])) . "</strong></h3>";
-                    echo "             <div class='col-md-4'>";
+                    echo "             <div class='col-md-4 col-xs-4'>";
                     echo "                 <label class='labelDataMovie'>Director: </label>";
                     echo "                 <p class='dataMovie'>" . utf8_encode($pelicula['director']) . "</p>";
                     echo "             </div>";
-                    echo "             <div class='col-md-4'>";
+                    echo "             <div class='col-md-4 col-xs-4'>";
                     echo "                 <label class='labelDataMovie'>Año: </label>";
                     echo "                 <p class='dataMovie'>" . $pelicula['anyo'] . "</p>";
                     echo "             </div>";
-                    echo "             <div class='col-md-4'>";
+                    echo "             <div class='col-md-4 col-xs-4'>";
                     echo "                 <label class='labelDataMovie'>Nº de Curiosidades: </label>";
                     echo "                 <p class='dataMovie'>" . $contador . "</p>";
                     echo "             </div>";
                     echo "            <div id='info_pelicula" . $i . "' class='row collapse'>";
-                    echo "                <div class='col-md-12'>";
+                    echo "                <div class='col-md-12 col-xs-12'>";
                     echo "                    <div class='infoPeli'>";
                     echo "                        <div class='datosPeli'>";
                     echo "                             <h3>" . utf8_encode($pelicula['genero_pelicula']) . "</h3>";
@@ -61,7 +61,7 @@
                     echo "                </div>";
                     echo "            </div>";
                     echo "            <div id='info_curiosidades" . $i . "' class='row collapse'>";
-                    echo "                <div class='col-md-12'>";
+                    echo "                <div class='col-md-12 col-xs-12'>";
                     $arrayReviews = modelReviews::viewReviews($pelicula['clave_pelicula']);
                     foreach ($arrayReviews as $review) {
                         echo "                    <div class='curiosidad'>";

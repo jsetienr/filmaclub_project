@@ -33,7 +33,7 @@
             echo "            <div id='divValoracion'>";
             echo "                <label id='labelValoracion'>Puntuación: </label>";
             echo "                <div class='container-fluid'>";
-            echo "                    <div class='col-md-3'>";
+            echo "                    <div class='col-md-3  col-xs-6'>";
             echo "                        <label id='labelValoracionMal'>Mala: <i class='fas fa-angry labelIcon'></i></label>";
             echo "                        <div class='radio'>";
             echo "                            <label><input type='radio' name='puntuacion' value='1'>1</label>";
@@ -41,7 +41,7 @@
             echo "                            <label><input type='radio' name='puntuacion' value='3'>3</label>";
             echo "                        </div>";
             echo "                    </div>";
-            echo "                    <div class='col-md-3'>";
+            echo "                    <div class='col-md-3 col-xs-6'>";
             echo "                        <label id='labelValoracionRegular'>Floja...: <i class='fas fa-meh labelIcon'></i></label>";
             echo "                        <div class='radio'>";
             echo "                            <label><input type='radio' name='puntuacion' value='4'>4</label>";
@@ -49,14 +49,14 @@
             echo "                            <label><input type='radio' name='puntuacion' value='6'>6</label>";
             echo "                        </div>";
             echo "                    </div>";
-            echo "                    <div class='col-md-3'>";
+            echo "                    <div class='col-md-3 col-xs-6'>";
             echo "                        <label id='labelValoracionBien'>Buena: <i class='fas fa-grin-beam labelIcon'></i></label>";
             echo "                        <div class='radio'>";
             echo "                            <label><input type='radio' name='puntuacion' value='7'>7</label>";
             echo "                            <label><input type='radio' name='puntuacion' value='8'>8</label>";
             echo "                        </div>";
             echo "                    </div>";
-            echo "                    <div class='col-md-3'>";
+            echo "                    <div class='col-md-3 col-xs-6'>";
             echo "                        <label id='labelValoracionMuyBien'>¡Excelente!: <i class='fas fa-grin-stars labelIcon'></i></label>";
             echo "                        <div class='radio'>";
             echo "                            <label><input type='radio' name='puntuacion' value='9'>9</label>";

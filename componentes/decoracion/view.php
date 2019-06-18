@@ -6,12 +6,12 @@
             $arrayDecoracion = modelDecoracion::viewProductos();
 
             foreach ($arrayDecoracion as  $producto) {
-                echo "            <div class='col-md-4'>";
+                echo "            <div class='col-md-4 col-xs-12'>";
                 echo "                <div class='producto container-fluid'>";
-                echo "                    <div class='col-md-12'>";
+                echo "                    <div class='col-md-12 col-xs-12'>";
                 echo "                        <img class='img-responsive imgProducto' alt='producto' src='" . $producto['imagen_producto'] . "'>";
                 echo "                    </div>";
-                echo "                    <div class='col-md-12'>";
+                echo "                    <div class='col-md-12 col-xs-12'>";
                 echo "                        <div class='producto-info'>";
                 echo "                            <h4>" . utf8_encode($producto['nombre']) . "</h4>";
                 echo "                            <span>" . $producto['pvp'] . "€</span>";

@@ -15,12 +15,12 @@
 
                 foreach ($results_array as $noticia) {
 
-                    echo "         <div class='col-md-12'>";
+                    echo "         <div class='col-md-12 col-xs-12'>";
                     echo "         <div class='contenido-reciente independiente container-fluid'>";
-                    echo "             <div class='col-md-2'>";
+                    echo "             <div class='col-md-2 col-xs-12'>";
                     echo "                 <img src='" . $noticia['poster'] . "' alt='poster' height='220' width='150'>";
                     echo "             </div>";
-                    echo "             <div class='col-md-10'>";
+                    echo "             <div class='col-md-10 col-xs-12'>";
                     echo "                 <h3><strong>" . stripslashes($noticia['titular']) . "</strong></h3>";
                     echo "                 <h5><i>" . $noticia['nombre'] . "</i></h5>";
                     echo "                 <p>" . stripslashes($noticia['noticia']) . "</p>";

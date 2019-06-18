@@ -31,6 +31,17 @@ class modelCreadorPeliculas
             ( '$nombre', '$director', $anyo, $genero, $duracion, '$descripcion')";
 
         $db->query($sql);
+
+        if ($db->affectedRows() > 0) {
+            echo " <div class='alert alert-success' role='alert'>";
+            echo "  Película creada con éxito! <i class='fas fa-laugh-beam icon-2x'></i>";
+            echo " </div>";
+        } else {
+            echo " <div class='alert alert-warning' role='alert'>";
+            echo "  Ha habido un problema al insertar la película... <i class='fas fa-grin-beam-sweat icon-2x'></i>";
+            echo " </div>";
+        }
+
         return $db->affectedRows();
     }
 
@@ -65,6 +76,17 @@ class modelCreadorPeliculas
         VALUES ($clave_pelicula, '$ruta')";
 
         $db->query($sql);
+
+        if ($db->affectedRows() > 0) {
+            echo " <div class='alert alert-success' role='alert'>";
+            echo "  Poster insertado con éxito! <i class='fas fa-laugh-beam icon-2x'></i>";
+            echo " </div>";
+        } else {
+            echo " <div class='alert alert-warning' role='alert'>";
+            echo "  Ha habido un problema al insertar el poster... <i class='fas fa-grin-beam-sweat icon-2x'></i>";
+            echo " </div>";
+        }
+
         return $db->affectedRows();
     }
 }

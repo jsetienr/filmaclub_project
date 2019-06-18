@@ -40,6 +40,17 @@ class modelCreacionProductos
         // var_dump($sql);
         $db->query($sql);
         // var_dump($db->affectedRows());
+
+        if ($db->affectedRows() > 0) {
+            echo " <div class='alert alert-success' role='alert'>";
+            echo "  Producto creado con éxito! <i class='fas fa-laugh-beam icon-2x'></i>";
+            echo " </div>";
+        } else {
+            echo " <div class='alert alert-warning' role='alert'>";
+            echo "  Ha habido un problema al crear el producto... <i class='fas fa-grin-beam-sweat icon-2x'></i>";
+            echo " </div>";
+        }
+
         return $db->affectedRows();
     }
 
@@ -65,6 +76,17 @@ class modelCreacionProductos
         VALUES ($id_producto, '$ruta')";
 
         $db->query($sql);
+
+        if ($db->affectedRows() > 0) {
+            echo " <div class='alert alert-success' role='alert'>";
+            echo "  Imagen enlazada con éxito! <i class='fas fa-laugh-beam icon-2x'></i>";
+            echo " </div>";
+        } else {
+            echo " <div class='alert alert-warning' role='alert'>";
+            echo "  Ha habido un problema al enlazar la imagen... <i class='fas fa-grin-beam-sweat icon-2x'></i>";
+            echo " </div>";
+        }
+
         return $db->affectedRows();
     }
 }

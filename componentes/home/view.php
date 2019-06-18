@@ -70,7 +70,7 @@
 
     <div class="row">
         <!--Reviews-->
-        <div class="col-md-4">
+        <div class="col-md-4 col-xs-12">
             <div class="contenido-reciente">
                 <h3>Reviews Recientes...</h3>
                 <?php
@@ -89,7 +89,7 @@
         </div>
 
         <!--Historias del Cine-->
-        <div class="col-md-4">
+        <div class="col-md-4 col-xs-12">
             <div class="contenido-reciente">
                 <h3>Historias del Cine Recientes...</h3>
                 <?php
@@ -108,7 +108,7 @@
         </div>
 
         <!--Noticias-->
-        <div class="col-md-4">
+        <div class="col-md-4 col-xs-12">
             <div class="contenido-reciente">
                 <h3>Noticias Recientes...</h3>
                 <?php
@@ -145,7 +145,7 @@
 
     <div id="info_equipo" class="row collapse">
         <!-- Miembro -->
-        <div class="col-md-4">
+        <div class="col-md-4 col-xs-12">
             <div class="miembro-equipo">
 
                 <img class="img-responsive img-circle" src="img/about_us/bryan.jpg">
@@ -161,7 +161,7 @@
         </div>
 
         <!-- Miembro -->
-        <div class="col-md-4">
+        <div class="col-md-4 col-xs-12">
             <div class="miembro-equipo">
 
                 <img class="img-responsive img-circle" src="img/about_us/javi.jpg">
@@ -177,7 +177,7 @@
         </div>
 
         <!-- Miembro -->
-        <div class="col-md-4">
+        <div class="col-md-4 col-xs-12">
             <div class="miembro-equipo">
 
                 <img class="img-responsive img-circle" src="img/about_us/carmen.jpg">
